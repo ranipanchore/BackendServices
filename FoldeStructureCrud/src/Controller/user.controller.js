@@ -2,8 +2,9 @@
 
 import UserModel from "../Model/UserModel.js"
 
-const getData = (req,res) =>{
-    res.send("getting get method and get route");
+const getData = async (req,res) =>{
+   const userData = await UserModel.find();
+   res.send(userData);
 }
 
 const registerUser =async (req,res)=>{
